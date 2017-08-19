@@ -18,10 +18,11 @@ class App extends Component {
     
     addReminder(){
         // console.log("this", this);
-        this.props.addReminder(this.state.text);
+       this.props.addReminder(this.state.text);
     }
     
     render(){
+        console.log('this.props', this.props);
         
         return(
                 <div className="App">
@@ -57,4 +58,12 @@ function mapDispatchToProps(dispatch){
     
 }
 
-export default connect(null, mapDispatchToProps)(App);
+
+function mapStateToProps(state) {
+  console.log('state', state);
+  return {
+    reminders: state
+  }
+}
+
+export default connect(mapStateToProps, { addReminder })(App);
