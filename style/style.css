@@ -1,3 +1,9 @@
+html, body {
+  background: #3498db;  
+
+    
+}
+
 .App{
     padding-top: 20px;
     display: flex;

@@ -91,6 +91,11 @@ class App extends Component {
                                 className="form-control"
                                 placeholder="I have to..."
                                 onChange = {(event) => { this.setState({text: event.target.value})}}
+                                onKeyPress = {event => {
+                                    if (event.key === 'Enter'){
+                                      this.addReminder();
+                                    }
+                                  }}
                             
                             />
                             <input 
