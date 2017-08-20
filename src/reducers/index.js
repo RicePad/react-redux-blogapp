@@ -2,20 +2,18 @@ import { ADD_REMINDER, DELETE_REMINDER } from '../constants';
 
 
 const reminder = (action) => {
+    
+    let {text, dueDate} = action;
     return {
-        text: action.text,
-        id: Math.random()
+        // text: action.text,
+        id: Math.random(),
+        text,
+        dueDate
         
     };
     
 };
 
-// const removeById = (state = [], id) => {
-//     const reminders = state.filter(reminder => reminder.id !== id);
-//     console.log('new reduced reminders', reminders);
-//     return reminders;
-    
-// };
 
 
 const removeById = (state = [], id) => {

@@ -11,7 +11,8 @@ class App extends Component {
         super(props);
         
         this.state = {
-          text: ''  
+          text: '',
+          dueDate: ''
             
         };
         
@@ -19,12 +20,13 @@ class App extends Component {
     
     addReminder(){
         // console.log("this", this);
-       this.props.addReminder(this.state.text);
+       console.log('this.state.dueDate', this.state.dueDate);
+       this.props.addReminder(this.state.text, this.state.dueDate);
     }
     
     deleteReminder(id){
-        console.log('deleting application', id);
-        console.log('this.props', this.props);
+        // console.log('deleting application', id);
+        // console.log('this.props', this.props);
         this.props.deleteReminder(id);
         
     }
@@ -84,6 +86,12 @@ class App extends Component {
                                 className="form-control"
                                 placeholder="I have to..."
                                 onChange = {(event) => { this.setState({text: event.target.value})}}
+                            
+                            />
+                            <input 
+                                className="form-control"
+                                type="datetime-local"
+                                onChange={(event) => {this.setState({dueDate: event.target.value})}}
                             
                             />
                         
