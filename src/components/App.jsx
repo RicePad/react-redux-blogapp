@@ -47,6 +47,7 @@ class App extends Component {
                                 <div className="list-item">
                                     <div> { reminder.text }</div>
                                     <div><em>{moment( new Date(reminder.dueDate)).fromNow()}</em></div>
+                                    
 
                                 </div>
                                 <div className="list-item delete-button"
@@ -71,7 +72,7 @@ class App extends Component {
             </ul>
             
             
-            );
+            )
         
         
         
@@ -83,7 +84,7 @@ class App extends Component {
         return(
                 <div className="App">
                     <div className="title">
-                        Reminder Pro
+                       My Daily Reminder Pro
                     </div>
                     <div className="form-inline reminder-form">
                         <div className="form-group">
@@ -102,7 +103,7 @@ class App extends Component {
                                 className="form-control"
                                 type="datetime-local"
                                 onChange={(event) => {this.setState({dueDate: event.target.value})}}
-                            
+                                
                             />
                         
                         </div>
