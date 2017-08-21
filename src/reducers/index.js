@@ -39,6 +39,7 @@ const reminders = (state = [], action) => {
       case CLEAR_REMINDERS:
           reminders = [];
           bake_cookie('reminders', reminders);
+          return reminders;
     default: 
         return state;
       
