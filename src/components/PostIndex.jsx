@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PostsShow from './PostsShow'
+import PostNew from './PostNew'
 
 import { fetchPosts } from '../actions/index'
 import { connect } from 'react-redux';
@@ -19,9 +19,11 @@ class PostIndex extends Component{
     renderPosts(){
         return  _.map(this.props.posts, post => {
             return (
-                <li className="list-group-item" key={post.id}>
-                    {post.title}
-                </li>
+              
+                    <li className="list-group-item" key={post.id}>
+                        {post.title}
+                    </li>
+         
                 );
             
         });
@@ -34,6 +36,11 @@ class PostIndex extends Component{
         console.log(this.props.posts);
         return(
             <div>
+                <div className="text-xs-right">
+                    <Link className="btn btn-primary" to="/post/new">
+                        Add a Post
+                    </Link>
+                </div>
                 <h3>List of Posts</h3>
                 <ul className="list-group">
                     {this.renderPosts()}

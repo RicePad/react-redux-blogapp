@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import PostIndex from './components/PostIndex'
-import PostsShow from './components/PostsShow'
+import PostNew from './components/PostNew'
 
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
@@ -23,7 +23,7 @@ ReactDom.render(
   <Provider store={ store(reducers) }> 
     <Router path="/" history={browserHistory}>
         <Route path="/" component={PostIndex} />
-        <Route path="/blog" component={PostsShow}/>
+        <Route path="/post/new" component={PostNew}/>
         <Route />
     </Router>
  </Provider>, document.querySelector('.container')

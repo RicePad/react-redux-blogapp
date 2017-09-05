@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router'
 
 
-class PostsShow extends Component{
+class PostNew extends Component{
     
     
     render(){
         return(
             <div> 
             
-                Showing a post with unique ID from PostsShow Component
+                Create your first posts
                 <div><Link to={'/'}>Go back to list of blogs</Link></div>
             </div>
             )
@@ -19,4 +19,4 @@ class PostsShow extends Component{
 
 
 
-export default PostsShow;
+export default PostNew;
