@@ -22,7 +22,7 @@ const store = applyMiddleware(promise)(createStore);
 ReactDom.render(
   <Provider store={ store(reducers) }> 
     <Router path="/" history={browserHistory}>
-        <Route path="/index" component={PostIndex} />
+        <Route path="/" component={PostIndex} />
         <Route path="/blog" component={PostsShow}/>
         <Route />
     </Router>
