@@ -12,7 +12,7 @@ import promise from 'redux-promise'
 
 import { Router, Route, browserHistory } from 'react-router';
 
-const store = applyMiddleware()(promise)(createStore);
+const store = applyMiddleware(promise)(createStore);
 
 
 //  *** TEST APPLY MIDDLEWARE COMMENTING THIS SECTINO OUT.

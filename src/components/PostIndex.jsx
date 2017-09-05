@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import PostsShow from './PostsShow'
 
+import { fetchPosts } from '../actions/index'
+import { connect } from 'react-redux';
+
 import { Link } from 'react-router'
 
 
 class PostIndex extends Component{
     
+    componentDidMount(){
+        this.props.fetchPosts();
+    }
     
     render(){
         return(
@@ -19,4 +25,4 @@ class PostIndex extends Component{
 
 
 
-export default PostIndex;
+export default connect (null, { fetchPosts })(PostIndex);
