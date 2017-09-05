@@ -5,6 +5,8 @@ import { fetchPosts } from '../actions/index'
 import { connect } from 'react-redux';
 
 import { Link } from 'react-router'
+ 
+ import _ from 'lodash';
 
 
 class PostIndex extends Component{
@@ -13,10 +15,29 @@ class PostIndex extends Component{
         this.props.fetchPosts();
     }
     
+    
+    renderPosts(){
+        return  _.map(this.props.posts, post => {
+            return (
+                <li className="list-group-item" key={post.id}>
+                    {post.title}
+                </li>
+                );
+            
+        });
+            
+            
+        
+        
+    }
     render(){
+        console.log(this.props.posts);
         return(
             <div>
-                <h1>List of blogs from Post Index Component</h1>
+                <h3>List of Posts</h3>
+                <ul className="list-group">
+                    {this.renderPosts()}
+                </ul>
             </div>
             );
         
@@ -24,5 +45,13 @@ class PostIndex extends Component{
 }
 
 
+function mapStateToProps(state){
+    return {
+        posts: state.posts
+        
+    };
+    
+    
+}
 
-export default connect (null, { fetchPosts })(PostIndex);
+export default connect (mapStateToProps, { fetchPosts })(PostIndex);
