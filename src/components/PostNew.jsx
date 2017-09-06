@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
+import { Field, reduxForm } from 'redux-form';
 
 
 class PostNew extends Component{
@@ -12,11 +13,14 @@ class PostNew extends Component{
                 Create your first posts
                 <div><Link to={'/'}>Go back to list of blogs</Link></div>
             </div>
-            )
+            );
         
     }
 }
 
 
 
-export default PostNew;
+export default reduxForm({
+    form: 'PostsNewForm'
+    
+})(PostNew);
