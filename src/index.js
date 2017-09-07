@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import PostIndex from './components/PostIndex'
 import PostNew from './components/PostNew'
+import PostShow from './components/PostShow'
 
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
@@ -23,6 +24,8 @@ ReactDom.render(
   <Provider store={ store(reducers) }> 
     <Router path="/" history={browserHistory}>
         <Route path="/" component={PostIndex} />
+        <Route path="/post/:id" component={PostShow}/>
+
         <Route path="/post/new" component={PostNew}/>
         <Route />
     </Router>
