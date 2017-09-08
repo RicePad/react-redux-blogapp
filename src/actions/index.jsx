@@ -3,6 +3,8 @@ import axios from 'axios';
 
 export const FETCH_POST = "FETCH_POST";
 export const CREATE_POST = "CREATE_POST";
+export const FETCH_POSTID = "FETCH_POSTID"
+export const DELETE_POST = "DELETE_POST"
 
 const ROOT_URL = 'https://reduxblog.herokuapp.com/api';
 const API_KEY = '?key=verifyemail123';
@@ -30,4 +32,27 @@ export function createPost(values, callback){
         
     };
     
+}
+
+export function fecthPostid(id){
+    const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`); 
+    
+    return {
+        type: FETCH_POSTID,
+        payload: request
+        
+    }
+    
+}
+
+export function deletePost(id, callback){
+        const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
+        .then(() => callback());
+
+
+        return {
+            type: DELETE_POST,
+            payload: id
+            
+        }
 }

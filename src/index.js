@@ -24,7 +24,7 @@ ReactDom.render(
   <Provider store={ store(reducers) }> 
     <Router path="/" history={browserHistory}>
         <Route path="/" component={PostIndex} />
-        <Route path="/post/:id" component={PostShow}/>
+        <Route path="/posts/:id" component={PostShow}/>
 
         <Route path="/post/new" component={PostNew}/>
         <Route />
